@@ -388,15 +388,15 @@ begin
   if FBrowser.LoadUrl(Url) then
   begin
     Result := Round(FindPriceInText(FBrowser.ResponseBody));
+  end;
 
-    if Result > 0 then
-    begin
-      DoMessageF(msgPriceFound, [Result]);
-    end
-      else
-    begin
-      DoMessageF(msgPriceNotFound, [Url]);
-    end;
+  if Result > 0 then
+  begin
+    DoMessageF(msgPriceFound, [Result]);
+  end
+    else
+  begin
+    DoMessageF(msgPriceNotFound, [Url]);
   end;
 end;
 
